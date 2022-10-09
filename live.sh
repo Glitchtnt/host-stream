@@ -1,0 +1,1 @@
+ffmpeg -stream_loop -1 -re -i live320.mp4 -stream_loop -1 -re -i https://s3.yesstreaming.net:19000/stream -vcodec libx264 -pix_fmt yuvj420p -maxrate 20048k -preset ultrafast -r 12 -framerate 30 -g 50 -c:a aac -b:a 128k -ar 44100 -strict experimental -video_track_timescale 1000 -b:v 150000k -f flv  rtmp://rtmp-global.cloud.vimeo.com/live/282a9aa6-7734-4155-a015-35811f670141
